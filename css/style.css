@@ -285,6 +285,13 @@ span
   width: 700px;
   float: left;}
 
+#contacts {
+    width: 100%;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+}
+
 .content_item
 { width: 700px;
   margin: 0 0 20px 20px;
@@ -368,4 +375,8 @@ span
 .title-link:hover {
 		color: #A93973;
 		text-decoration: none;
+}
+
+.clear {
+    clear: both;
 }
