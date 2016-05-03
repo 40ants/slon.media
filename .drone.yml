@@ -1,4 +1,10 @@
 build:
   image: alpine
   commands:
-    ls
+    - ls
+
+publish:
+  registry: registry:5000
+  repo: slon.media
+  tag: latest
+  insecure: true
