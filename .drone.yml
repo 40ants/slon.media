@@ -5,7 +5,7 @@ build:
 
 publish:
   docker:
-    registry: registry:5000
+    registry: registry.40ants.com:5000
     repo: slon.media
     tag: latest
     insecure: true
