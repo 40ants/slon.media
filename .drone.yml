@@ -4,7 +4,8 @@ build:
     - ls
 
 publish:
-  registry: registry:5000
-  repo: slon.media
-  tag: latest
-  insecure: true
+  docker:
+    registry: registry:5000
+    repo: slon.media
+    tag: latest
+    insecure: true
