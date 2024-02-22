@@ -253,13 +253,16 @@ span
   width: 201px;}
 
 .sidebar h2
-{ height: 20px;
-  padding: 0 0 5px 5px;
+{ padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   color: #FFF;
   background: #802954;}  
-  
-.sidebar h4
+
+.sidebar h3
 { font-size: 125%;
+  color: #FFF;}
+
+.sidebar h4
+{ font-weight: bold;
   color: #FFF;}
 
 .sidebar p
