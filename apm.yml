@@ -1,0 +1,24 @@
+name: slon.media
+version: 1.0.0
+description: APM project for slon.media
+author: Alexander Artemenko
+# Which agent platforms to deploy to.
+# Resolution order: --target flag > this field > auto-detect from filesystem.
+# Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, grok-build, kiro, opencode, windsurf
+targets:
+  - agent-skills
+dependencies:
+  apm:
+    - git: obra/superpowers
+      skills:
+        - brainstorming
+        - dispatching-parallel-agents
+        - systematic-debugging
+    - anthropics/skills/skills/canvas-design
+    - anthropics/skills/skills/frontend-design
+    - anthropics/skills/skills/theme-factory
+    - anthropics/skills/skills/web-artifacts-builder
+    - anthropics/skills/skills/webapp-testing
+  mcp: []
+includes: auto
+scripts: {}
