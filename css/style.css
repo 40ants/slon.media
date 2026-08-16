@@ -81,20 +81,20 @@ ol li
 
 #banner_image {
     margin: 0 auto;
-	width: 700px;
+	width: 640px;
 	float: left;
 	margin-left: 20px;
 }
 #slider-wrapper {
     height: 250px;
 	background: transparent;
-	width: 700px;
+	width: 640px;
 }
 #slider {
     background: url("../images/loading.gif") no-repeat scroll 50% 50% transparent;
     height: 250px;
     position: relative;
-    width: 700px;
+    width: 640px;
 }
 #slider img {
     display: none;
@@ -238,19 +238,19 @@ span
 
 .sidebar_container
 { float: left;
-  width: 200px;
+  width: 280px;
   margin: 0 0 20px 20px;}
 
 .sidebar
 { float: left;
-  width: 210px;
+  width: 294px;
   margin-bottom: 10px;}
 
 .sidebar_item
 { font: normal 100% arial, sans-serif;
   padding: 0 15px 0 0;
   margin-bottom: 20px;
-  width: 201px;}
+  width: 281px;}
 
 .sidebar h2
 { padding: 0.25rem 0.5rem 0.25rem 0.5rem;
@@ -267,6 +267,13 @@ span
 
 .sidebar p
 { color: #FFF;}
+
+.sidebar img
+{ display: block;
+  width: 100%;
+  max-width: 201px;
+  height: auto;
+  margin-bottom: 10px;}
 
 .sidebar a
 { color: #802954;}
@@ -285,8 +292,46 @@ span
 
 #content
 { text-align: left;
-  width: 700px;
+  width: 640px;
   float: left;}
+
+@media screen and (max-width: 1200px), screen and (orientation: portrait)
+{
+  #header, #menu_container, #site_content, #main, #footer
+  { width: 100%; }
+
+  #site_content
+  { box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+
+  #header
+  { height: auto; }
+
+  #header h1, #header h2
+  { width: auto; }
+
+  .sidebar_container, .sidebar, .sidebar_item
+  { float: none;
+    width: auto;
+    margin-left: 0; }
+
+  .sidebar_item
+  { padding-right: 0; }
+
+  #banner_image, #slider-wrapper, #slider, #content
+  { float: none;
+    width: 100%;
+    margin-left: 0; }
+
+  .content_item
+  { float: none;
+    width: auto;
+    margin-left: 0; }
+
+  #slider-wrapper, #slider
+  { max-width: 700px; }
+}
 
 #contacts {
     width: 100%;
@@ -296,9 +341,17 @@ span
 }
 
 .content_item
-{ width: 700px;
+{ width: 600px;
   margin: 0 0 20px 20px;
   float: left;}
+
+@media screen and (max-width: 1200px), screen and (orientation: portrait)
+{
+  .content_item
+  { width: auto;
+    margin-left: 0;
+    float: none; }
+}
 
 .content_image
 { width: 250px;
