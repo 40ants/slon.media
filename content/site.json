@@ -1,0 +1,10 @@
+{
+  "films": ["film-nelya", "film-park-otdyha"],
+  "books": ["book-oda-moskve", "book-ostrov", "book-delo-mitkov", "book-vek-serebryanyy"],
+  "news": ["news-sbornik", "news-nelya", "news-snyato", "news-nachalo"],
+  "pages": ["about"],
+  "featured_news": ["book-oda-moskve", "news-sbornik"],
+  "home_title": "Студия Слон — фильмы и книги",
+  "home_description": "Фильмы студии «Слон», книги Марии Артеменко-Якушевой, команда и новости авторских проектов.",
+  "home_intro": "Снимаем фильмы и рассказываем истории. Здесь собраны работы студии «Слон» и книги Марии Артеменко-Якушевой."
+}

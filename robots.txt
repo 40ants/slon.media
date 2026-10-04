@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /docs/
+Disallow: /templates/
+Disallow: /content/
+Disallow: /scripts/
+
+Sitemap: https://slon.media/sitemap.xml

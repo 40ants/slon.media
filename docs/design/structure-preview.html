@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Слон — обсуждение структуры</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #28232d; background: #eceaf0; font: 16px/1.5 Arial, sans-serif; }
+    .review { max-width: 1360px; margin: auto; padding: 24px; }
+    .review-header { display: flex; gap: 24px; justify-content: space-between; align-items: center; }
+    h1 { margin: 0; font-size: 24px; }
+    p { margin: 8px 0 20px; }
+    .mode { display: flex; flex-wrap: wrap; gap: 8px; }
+    button { min-height: 44px; border: 1px solid #8b8293; border-radius: 6px; padding: 8px 16px; background: white; color: #28232d; font: inherit; cursor: pointer; }
+    button[aria-pressed="true"] { background: #533445; color: white; border-color: #533445; }
+    a { color: #683e60; text-underline-offset: 3px; }
+    :focus-visible { outline: 3px solid #8d4775; outline-offset: 4px; }
+    details { background: white; padding: 16px 20px; margin: 0 0 24px; border: 1px solid #cbc5d0; border-radius: 6px; }
+    summary { cursor: pointer; font-weight: bold; }
+    .map { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 20px 0; }
+    .map h2 { font-size: 18px; margin: 0 0 6px; }
+    .map ul { padding-left: 20px; }
+    code { font-size: 13px; overflow-wrap: anywhere; }
+    .caption { color: #615866; font-size: 14px; }
+    .stage { overflow-x: auto; padding: 8px 0 24px; }
+    iframe { display: block; width: 100%; max-width: 1200px; margin: auto; border: 1px solid #b7afbf; border-radius: 8px; background: white; }
+    @media (max-width: 700px) { .review { padding: 16px; } .review-header { align-items: start; flex-direction: column; gap: 12px; } .map { grid-template-columns: 1fr; gap: 12px; } }
+  </style>
+</head>
+<body>
+  <main class="review">
+    <div class="review-header">
+      <div>
+        <h1>Слон · структура главной</h1>
+        <p class="caption">Черновой макет для обсуждения порядка блоков и переходов.</p>
+      </div>
+      <div class="mode" role="group" aria-label="Ширина макета">
+        <button type="button" data-width="1200" aria-pressed="true">Компьютер</button>
+        <button type="button" data-width="375" aria-pressed="false">Телефон · 375 px</button>
+      </div>
+    </div>
+    <details>
+      <summary>Карта сайта и размещение материалов</summary>
+      <div class="map">
+        <section>
+          <h2>Главная</h2>
+          <code>/index.html</code>
+          <p>Представление студии → фильмы → книги → последние новости → команда и контакты.</p>
+          <p>Короткие анонсы ведут к подробным материалам. Новости больше не стоят перед всем основным содержанием.</p>
+        </section>
+        <section>
+          <h2>Фильмы</h2>
+          <code>/films.html</code>
+          <ul>
+            <li>«Неля» — <code>/film-nelya.html</code></li>
+            <li>«Парк отдыха» — <code>/film-park-otdyha.html</code></li>
+          </ul>
+          <p>Статья и кадры «Нели» переходят с главной на страницу фильма. Участники проекта связаны с разделом команды.</p>
+        </section>
+        <section>
+          <h2>Книги</h2>
+          <code>/books.html</code>
+          <ul>
+            <li>«Ода Москве» — <code>/book-oda-moskve.html</code></li>
+            <li>«Остров» — <code>/book-ostrov.html</code></li>
+            <li>«Дело Митьков» — <code>/book-delo-mitkov.html</code></li>
+            <li>«Век серебряный, век золотой» — <code>/book-vek-serebryanyy.html</code></li>
+          </ul>
+          <p>На странице книги: обложка, автор, аннотация и существующие ссылки на чтение или покупку.</p>
+        </section>
+        <section>
+          <h2>Команда</h2>
+          <code>/testimonials.html</code>
+          <p>Сохраняем адрес раздела «Наши», меняем название на «Команда». Участников группируем по проекту и роли.</p>
+        </section>
+        <section>
+          <h2>Контакты</h2>
+          <code>/contact.html</code>
+          <p>Способ связи со студией и форма. Прямой контакт нужно получить у владельца: адрес почты в исходниках отсутствует.</p>
+        </section>
+        <section>
+          <h2>Архив новостей</h2>
+          <code>/news.html</code>
+          <p>Все новости, включая записи 2015 года. Вход — из блока новостей и подвала; основной пункт меню не нужен.</p>
+        </section>
+      </div>
+      <p><strong>При переносе:</strong> сохранить весь авторский материал, задать каждой странице свои заголовок и описание, связать проекты внутренними ссылками. Судьбу пустых <code>ourwork.html</code> и <code>projects.html</code> решить при реализации.</p>
+      <p class="caption">Страницы этой структуры уже созданы в корне сайта. Ниже — предварительный просмотр главной в том же оформлении; ссылки ведут к полным материалам.</p>
+    </details>
+    <p>Примеры на общем шаблоне: <a href="examples/film-nelya.html" target="_blank" rel="noopener">Фильм</a> · <a href="examples/book-oda-moskve.html" target="_blank" rel="noopener">Книга</a> · <a href="examples/news-sbornik.html" target="_blank" rel="noopener">Новость</a>.</p>
+    <p class="caption" id="mode-status">Широкий экран: проекты в несколько колонок. На телефоне порядок блоков сохраняется.</p>
+    <div class="stage">
+      <iframe src="home-wireframe.html" title="Макет главной страницы студии Слон" height="1900"></iframe>
+    </div>
+  </main>
+  <script>
+    const frame = document.querySelector('iframe');
+    const controls = document.querySelectorAll('[data-width]');
+    controls.forEach(function (button) {
+      button.addEventListener('click', function () {
+        controls.forEach(function (control) { control.setAttribute('aria-pressed', String(control === button)); });
+        frame.style.maxWidth = button.dataset.width + 'px';
+        document.getElementById('mode-status').textContent = button.dataset.width === '375'
+          ? 'Телефон · 375 px: сначала студия и проекты, затем новости. Меню раскрывается кнопкой.'
+          : 'Широкий экран: проекты в несколько колонок. На телефоне порядок блоков сохраняется.';
+      });
+    });
+    frame.addEventListener('load', function () {
+      const observer = new ResizeObserver(function () {
+        frame.style.height = frame.contentDocument.documentElement.scrollHeight + 'px';
+      });
+      observer.observe(frame.contentDocument.body);
+    });
+  </script>
+</body>
+</html>

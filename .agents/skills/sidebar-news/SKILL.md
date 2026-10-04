@@ -1,22 +1,20 @@
 ---
 name: sidebar-news
-description: Add or update news entries in the left sidebar of the Slon media static website, with or without a cover image.
+description: Handle requests to add Slon media news in the former sidebar by using the site's current news-page and homepage-teaser workflow.
 ---
 
-# Sidebar News
+# Slon news placement
 
-Use this skill for requests to publish a new sidebar news entry on the Slon media site. Do not use it for main-content news pages, unrelated sidebar blocks, or site-wide redesigns.
+The site's redesign replaced the homepage sidebar with a news block and an
+archive. For new or edited news, read
+`../slon-site-content/SKILL.md` and use its shared content templates.
 
-The homepage sidebar is in `index.html`, inside `.sidebar_container > .sidebar`; each entry is a `.sidebar_item`. Place a new news item before the existing block headed `Новость`, unless the user specifies a different placement.
+Create or update the full article under `content/site/`, register it in the
+`news` array of `content/site.json`, and select it in `featured_news` when the
+user wants it on the homepage. Then regenerate with
+`python3 scripts/render-content.py --build`.
 
-Include a suitable `<h2>` heading when one is supplied or can be unambiguously derived. Preserve the user's Russian text, XHTML-style markup, and the surrounding two-space indentation convention.
-
-## Illustration
-
-An illustration is optional. When one is attached, copy it into `images/` with a lowercase, hyphenated, descriptive filename. Add an `<img>` before the entry text, using a concise Russian `alt` that identifies the image or cover. Do not add an image element when no illustration is provided.
-
-Existing sidebar CSS limits images to a responsive width; reuse it rather than adding inline dimensions or new styling unless the request explicitly calls for a layout change.
-
-## Verification
-
-Check the edited markup and image path. Run `git diff --check`; preserve unrelated working-tree changes.
+Preserve supplied Russian text and dates; an illustration is optional. Do not
+restore `.sidebar_container` or insert hand-written blocks into generated
+`index.html`. For an explicit request concerning a historical site revision,
+inspect that revision's layout before editing it.

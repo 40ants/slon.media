@@ -3,16 +3,19 @@
 ## Project Structure & Module Organization
 
 This repository is a small static website for the Slon studio. HTML pages live
-at the repository root: `index.html` is the main page, with `contact.html`,
-`testimonials.html`, `ourwork.html`, and `projects.html` providing supporting
-pages. Shared presentation rules are in `css/style.css`; browser libraries and
-site behavior are in `js/`. Put site images in `images/`, keeping related photo
+at the repository root: `index.html` is the main page, with
+`testimonials.html`, `contact.html`, `films.html`, `books.html`, and `news.html`
+providing supporting pages. Film and book details have their own root HTML files.
+Shared presentation rules are in `css/style.css`; legacy browser libraries are
+in `js/`. Put site images in `images/`, keeping related photo
 sets in a descriptive subdirectory such as `images/photos/`. `CNAME` configures
 the published custom domain.
 
 ## Build, Test, and Development Commands
 
-There is no package manager, compilation step, or automated test suite. Review
+There is no package manager or runtime compilation step. Generated HTML is
+checked in; after changing content or templates run
+`python3 scripts/render-content.py --build`. Review
 changes by opening the affected HTML page in a browser and checking navigation,
 images, links, and layout at typical desktop and mobile widths.
 
@@ -48,3 +51,18 @@ Recent history uses short, imperative summaries in either Russian or English,
 such as `Добавил ссылку.` or `Add CNAME.` Keep commits focused on one content or
 layout change. Pull requests should state the pages changed, summarize visible
 effects, link any relevant issue, and include screenshots for visual updates.
+
+## Site Structure and Content Templates
+
+The homepage is an overview; full film, book, news, and studio material lives on
+detail pages. All root pages use `templates/content/base.html` and
+`css/style.css`. Edit JSON under `content/site/`, the section order in
+`content/site.json`, team data in `content/team.json`, or shared templates under
+`templates/content/`; then regenerate root pages and `sitemap.xml` with
+`python3 scripts/render-content.py --build`. Do not edit generated HTML directly.
+Draft examples under `docs/design/` use the same layout and are excluded from
+the Docker production image.
+
+For new film, book, or news pages using this structure, read
+`.agents/skills/slon-site-content/SKILL.md`. The old homepage sidebar no longer
+exists; `.agents/skills/sidebar-news/SKILL.md` routes to the current workflow.
