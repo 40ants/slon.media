@@ -41,11 +41,20 @@
     footer { padding: 24px 0; border-top: 1px solid #d9d2dd; color: #675b6b; font-size: 14px; }
     @media (max-width: 700px) {
       .container { width: calc(100% - 36px); }
-      .header-row { min-height: 80px; gap: 16px; flex-wrap: wrap; padding: 16px 0; align-items: flex-start; }
+      .header-row { min-height: 80px; gap: 16px; flex-wrap: wrap; padding: 16px 0; align-items: center; }
       .desktop-menu { display: none; }
-      .mobile-menu { display: block; margin: 0; }
-      .mobile-menu summary { padding: 8px 0; }
-      .mobile-menu nav { flex-direction: column; gap: 0; padding-top: 8px; }
+      .mobile-menu { display: block; position: relative; margin: 0 0 0 auto; }
+      .mobile-menu summary { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 1px solid #d9d2dd; border-radius: 6px; color: #593347; list-style: none; text-decoration: none; }
+      .mobile-menu summary::-webkit-details-marker { display: none; }
+      .mobile-menu[open] summary { background: #eee7f0; }
+      .menu-icon { display: flex; flex-direction: column; gap: 5px; width: 22px; }
+      .menu-icon span { display: block; height: 2px; background: currentColor; }
+      .mobile-menu[open] .menu-icon span:first-child { transform: translateY(7px) rotate(45deg); }
+      .mobile-menu[open] .menu-icon span:nth-child(2) { opacity: 0; }
+      .mobile-menu[open] .menu-icon span:last-child { transform: translateY(-7px) rotate(-45deg); }
+      .mobile-menu nav { position: absolute; top: calc(100% + 12px); right: 0; z-index: 20; width: min(260px, calc(100vw - 36px)); flex-direction: column; gap: 0; padding: 8px; border: 1px solid #d9d2dd; border-radius: 8px; background: #faf9fb; box-shadow: 0 12px 28px rgb(48 41 54 / 14%); }
+      .mobile-menu nav a { display: block; padding: 12px 16px; border-radius: 4px; }
+      .mobile-menu nav a:hover, .mobile-menu nav a:focus-visible { background: #eee7f0; }
       .intro { padding: 36px 0 24px; }
       .intro p { font-size: 17px; }
       h2 { font-size: 28px; }
@@ -114,5 +123,4 @@ nav a[aria-current="page"] { font-weight: bold; text-decoration-thickness: 2px; 
   .film-gallery { gap: 12px; }
   .film-title-frame { height: 210px; }
   .contact-form { height: 540px; }
-  .mobile-menu { margin-left: auto; }
 }

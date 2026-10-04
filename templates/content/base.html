@@ -8,6 +8,7 @@
   <title>$document_title</title>
   <meta name="google-site-verification" content="10YH51PmLjVu6v2e5KvDPWVKBLQ6tcvL-xa1gWHqDqM" />
   <link rel="stylesheet" href="$asset_prefix/css/style.css" />
+  <script src="$asset_prefix/js/site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Перейти к содержанию</a>
@@ -18,8 +19,10 @@
         $navigation
       </nav>
       <details class="mobile-menu">
-        <summary>Меню</summary>
-        <nav aria-label="Основные разделы на телефоне">
+        <summary aria-label="Главное меню" aria-controls="mobile-navigation">
+          <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        </summary>
+        <nav id="mobile-navigation" aria-label="Основные разделы на телефоне">
           $navigation
         </nav>
       </details>
